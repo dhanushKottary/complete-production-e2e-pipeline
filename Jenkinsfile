@@ -41,8 +41,7 @@ pipeline{
                 script {
                     withSonarQubeEnv(credentialsId: 'jenkins-sonarqube-token'){
 				    sh   '''
-                   			 mvn sonar:sonar \
-                            -Dsonar.branch.name=dev
+                   			 mvn sonar:sonar
                          '''
                     }
 
