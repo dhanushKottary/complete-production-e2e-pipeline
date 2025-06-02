@@ -34,9 +34,9 @@ pipeline{
 
         } 
         stage("SonarQube Analysis"){
-            environment {
-                _JAVA_OPTIONS = "-Djdk.internal.httpclient.disableHostnameVerification=true"
-   			 }
+           // environment {
+               // _JAVA_OPTIONS = "-Djdk.internal.httpclient.disableHostnameVerification=true"
+   			 //}
             steps {
                 script {
                     withSonarQubeEnv(credentialsId: 'jenkins-sonarqube-token'){
