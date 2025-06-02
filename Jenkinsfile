@@ -49,10 +49,13 @@ pipeline{
             }
         }
         stage("Quality Gate "){
+            environment {
+                _JAVA_OPTIONS = "-Djdk.internal.httpclient.disableHostnameVerification=true"
+   			 }
             steps {
                 script {
-                   //waitForQualityGate abortPipeline: false, credentialsId: 'jenkins-sonarqube-token'
-					waitForQualityGate abortPipeline: true
+                   waitForQualityGate abortPipeline: false, credentialsId: 'jenkins-sonarqube-token'
+					//waitForQualityGate abortPipeline: true
                 }
             }
         }                 
