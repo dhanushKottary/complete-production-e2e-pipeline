@@ -56,7 +56,7 @@ pipeline{
                 }
             }
         }
-        stage("SonarQube Analysis"){
+        stage("Build and Push Image"){
             steps {
                 script {
                     docker.withRegistry('',DOCKER_PSWD){
